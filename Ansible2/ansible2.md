@@ -252,10 +252,54 @@ root@vagrant:/home/vagrant/ansible2#
 Ответ:
 ссылка.
 
+https://github.com/rmx7799/ansible/tree/main/Ansible2
+
 10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 
 Ответ:
-ссылка.
+выполнил команды по добавлению tag.
+
+User@DCE-HPE-AIV MINGW64 ~/netology-ansible/ansible/Ansible2 (main)
+
+
+$  git tag -fa 08-ansible-02-playbook a45f7f3add5f6569fdac845d84c0b8e8a36043bf
+Updated tag '08-ansible-02-playbook' (was 9993a29)
+
+
+User@DCE-HPE-AIV MINGW64 ~/netology-ansible/ansible/Ansible2 (main)
+
+$
+
+User@DCE-HPE-AIV MINGW64 ~/netology-ansible/ansible/Ansible2 (main)
+
+$ git log --pretty=oneline
+a45f7f3add5f6569fdac845d84c0b8e8a36043bf (HEAD -> main, tag: 08-ansible-02-playbook, origin/origin, origin/main, origin/HEAD) commit
+
+a832d8458a11ae24471e35c51832de7c0482e2e1 commit
+
+5b806517543e48611533e64b871f6c578852ef50 commit
+
+d073957a4a06328e818d8a7c88bc0b21d6a859cd Add files via upload
+
+916cf53d67e33135862c01a83cccda9008ce170b Create examp.yml
+
+257e59f6e0222fe9e927bb12c86ab92743e55c5a Create examp.yml
+
+e8e9e1d126cadacc6415d44aa508e0c005ad75e6 Create examp.yml
+
+0df083277531d6ca09d74f79b8235c0a8995ffdc Create examp.yml
+
+b6553857edfe42544b4ae0b88baedae5325c3414 Create prod.yml
+
+fae7e86c7ed41290927325a782c6866399dce67f Add files via upload
+
+ee9953e8269f58e5b16304435bed26fcd16d8ee1 Create test
+
+6eb5b4db6a1428294045f08ca1de2a85e170d641 Add files via upload
+
+
+User@DCE-HPE-AIV MINGW64 ~/netology-ansible/ansible/Ansible2 (main)
+
 
 ---
 
