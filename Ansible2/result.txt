@@ -1,0 +1,62 @@
+root@vagrant:/home/vagrant/ansible2# ansible-lint site.yml -vvv
+DEBUG    Logging initialized to level 10
+DEBUG    Options: Namespace(cache_dir='/root/.cache/ansible-compat/5bc770', colored=True, config_file=None, configured=True, cwd=PosixPath('/home/vagrant/ansible2'), display_relative_path=True, enable_list=[], exclude_paths=['.cache', '.git', '.hg', '.svn', '.tox'], extra_vars=None, format='rich', kinds=[{'jinja2': '**/*.j2'}, {'jinja2': '**/*.j2.*'}, {'yaml': '.github/**/*.{yaml,yml}'}, {'text': '**/templates/**/*.*'}, {'execution-environment': '**/execution-environment.yml'}, {'ansible-lint-config': '**/.ansible-lint'}, {'ansible-lint-config': '**/.config/ansible-lint.yml'}, {'ansible-navigator-config': '**/ansible-navigator.{yaml,yml}'}, {'inventory': '**/inventory/**.yml'}, {'requirements': '**/meta/requirements.yml'}, {'galaxy': '**/galaxy.yml'}, {'reno': '**/releasenotes/*/*.{yaml,yml}'}, {'playbook': '**/playbooks/*.{yml,yaml}'}, {'playbook': '**/*playbook*.{yml,yaml}'}, {'role': '**/roles/*/'}, {'tasks': '**/tasks/**/*.{yaml,yml}'}, {'handlers': '**/handlers/*.{yaml,yml}'}, {'vars': '**/{host_vars,group_vars,vars,defaults}/**/*.{yaml,yml}'}, {'test-meta': '**/tests/integration/targets/*/meta/main.{yaml,yml}'}, {'meta': '**/meta/main.{yaml,yml}'}, {'meta-runtime': '**/meta/runtime.{yaml,yml}'}, {'arg_specs': '**/roles/**/meta/argument_specs.{yaml,yml}'}, {'yaml': '.config/molecule/config.{yaml,yml}'}, {'requirements': '**/molecule/*/{collections,requirements}.{yaml,yml}'}, {'yaml': '**/molecule/*/{base,molecule}.{yaml,yml}'}, {'requirements': '**/requirements.yml'}, {'playbook': '**/molecule/*/*.{yaml,yml}'}, {'yaml': '**/{.ansible-lint,.yamllint}'}, {'yaml': '**/*.{yaml,yml}'}, {'yaml': '**/.*.{yaml,yml}'}], lintables=['site.yml'], listrules=False, listtags=False, loop_var_prefix=None, mock_modules=[], mock_roles=[], offline=None, parseable=False, progressive=False, project_dir='.', quiet=0, rules={}, rulesdir=[], rulesdirs=['/usr/local/lib/python3.8/dist-packages/ansiblelint/rules'], skip_action_validation=True, skip_list=[], tags=[], use_default_rules=False, var_naming_pattern=None, verbosity=3, version=False, warn_list=['experimental', 'role-name'], write_list=None)
+DEBUG    /home/vagrant/ansible2
+INFO     Set ANSIBLE_LIBRARY=/root/.cache/ansible-compat/5bc770/modules:/root/.ansible/plugins/modules:/usr/share/ansible/plugins/modules
+INFO     Set ANSIBLE_COLLECTIONS_PATH=/root/.cache/ansible-compat/5bc770/collections:/root/.ansible/collections:/usr/share/ansible/collections
+INFO     Set ANSIBLE_ROLES_PATH=/root/.cache/ansible-compat/5bc770/roles:/root/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles
+DEBUG    Loading rules from /usr/local/lib/python3.8/dist-packages/ansiblelint/rules
+INFO     Set ANSIBLE_LIBRARY=/root/.cache/ansible-compat/5bc770/modules:/root/.ansible/plugins/modules:/usr/share/ansible/plugins/modules
+INFO     Set ANSIBLE_COLLECTIONS_PATH=/root/.cache/ansible-compat/5bc770/collections:/root/.ansible/collections:/usr/share/ansible/collections
+INFO     Set ANSIBLE_ROLES_PATH=/root/.cache/ansible-compat/5bc770/roles:/root/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles
+DEBUG    Effective yamllint rules used: {'braces': {'level': 'error', 'forbid': False, 'min-spaces-inside': 0, 'max-spaces-inside': 1, 'min-spaces-inside-empty': -1, 'max-spaces-inside-empty': -1}, 'brackets': {'level': 'error', 'forbid': False, 'min-spaces-inside': 0, 'max-spaces-inside': 0, 'min-spaces-inside-empty': -1, 'max-spaces-inside-empty': -1}, 'colons': {'level': 'error', 'max-spaces-before': 0, 'max-spaces-after': 1}, 'commas': {'level': 'error', 'max-spaces-before': 0, 'min-spaces-after': 1, 'max-spaces-after': 1}, 'comments': {'level': 'warning', 'require-starting-space': True, 'ignore-shebangs': True, 'min-spaces-from-content': 1}, 'comments-indentation': False, 'document-end': False, 'document-start': False, 'empty-lines': {'level': 'error', 'max': 2, 'max-start': 0, 'max-end': 0}, 'empty-values': False, 'hyphens': {'level': 'error', 'max-spaces-after': 1}, 'indentation': {'level': 'error', 'spaces': 'consistent', 'indent-sequences': True, 'check-multi-line-strings': False}, 'key-duplicates': {'level': 'error'}, 'key-ordering': False, 'line-length': {'level': 'error', 'max': 160, 'allow-non-breakable-words': True, 'allow-non-breakable-inline-mappings': False}, 'new-line-at-end-of-file': {'level': 'error'}, 'new-lines': {'level': 'error', 'type': 'unix'}, 'octal-values': False, 'quoted-strings': False, 'trailing-spaces': {'level': 'error'}, 'truthy': {'level': 'warning', 'allowed-values': ['true', 'false'], 'check-keys': True}}
+WARNING  Overriding detected file kind 'yaml' with 'playbook' for given positional argument: site.yml
+INFO     Executing syntax check on site.yml (0.46s)
+DEBUG    Examining site.yml of type playbook
+WARNING  Listing 12 violation(s) that are fatal
+unnamed-task: All tasks should be named.
+site.yml:10 Task/Handler: block/always/rescue
+
+risky-file-permissions: File permissions unset or incorrect.
+site.yml:18 Task/Handler: Get clickhouse distrib
+
+yaml: trailing spaces (yaml[trailing-spaces])
+site.yml:34
+
+fqcn-builtins: Use FQCN for builtin actions.
+site.yml:38 Task/Handler: Upload tar.gz Vector from remote URL
+
+yaml: wrong indentation: expected 4 but found 6 (yaml[indentation])
+site.yml:38
+
+fqcn-builtins: Use FQCN for builtin actions.
+site.yml:49 Task/Handler: Create directrory for Vector
+
+risky-file-permissions: File permissions unset or incorrect.
+site.yml:49 Task/Handler: Create directrory for Vector
+
+fqcn-builtins: Use FQCN for builtin actions.
+site.yml:54 Task/Handler: Extract Vector in the installation directory
+
+yaml: truthy value should be one of [false, true] (yaml[truthy])
+site.yml:55
+
+fqcn-builtins: Use FQCN for builtin actions.
+site.yml:63 Task/Handler: Set environment Kibana
+
+risky-file-permissions: File permissions unset or incorrect.
+site.yml:63 Task/Handler: Set environment Kibana
+
+yaml: too many blank lines (4 > 0) (yaml[empty-lines])
+site.yml:72
+
+You can skip specific rules or tags by adding them to your configuration file:
+# .config/ansible-lint.yml
+warn_list:  # or 'skip_list' to silence them completely
+  - experimental  # all rules tagged as experimental
+  - fqcn-builtins  # Use FQCN for builtin actions.
+  - unnamed-task  # All tasks should be named.
+  - yaml  # Violations reported by yamllint.
+
+Finished with 9 failure(s), 3 warning(s) on 1 files.
+root@vagrant:/home/vagrant/ansible2#
